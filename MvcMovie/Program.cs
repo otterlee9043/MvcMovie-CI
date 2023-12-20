@@ -6,11 +6,8 @@ using MvcMovie.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// builder.Services.AddDbContext<MvcMovieContext>(options =>
-//     options.UseSqlServer(builder.Configuration.GetConnectionString("MvcMovieContext")));
-
 builder.Services.AddDbContext<MvcMovieContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DockerDB")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("MvcMovieContext")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
